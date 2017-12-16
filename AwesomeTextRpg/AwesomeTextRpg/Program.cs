@@ -41,19 +41,30 @@ namespace AwesomeTextRpg
         {
             Console.WriteLine("What's your character's name");
             hero.Name = Console.ReadLine();
-            Console.WriteLine("What's your character's strength (1-20)");
-            hero.Strength = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("What's your character's charisma (1-20)");
-            hero.Charisma = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("What's your character's intelligence (1-20)");
-            hero.Intelligence = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("What's your character's wisdom (1-20)");
-            hero.Wisdom = Convert.ToInt32(Console.ReadLine());
+            
+            hero.Strength = RollDice(20);
+            Console.WriteLine("Your your character's strength is:"+hero.Strength);
+            
+            hero.Charisma = RollDice(20);
+            Console.WriteLine("Your your character's charisma is:" + hero.Charisma);
+          
+            hero.Intelligence = RollDice(20);
+            Console.WriteLine("Your your character's intelligence is:" + hero.Intelligence);
+            hero.Wisdom = RollDice(20);
+            Console.WriteLine("Your your character's wisdom is:" + hero.Wisdom);
 
 
         }
+        public static Random diceRoll = new Random();
+        public static int RollDice(int number)
+        {
        
+            return diceRoll.Next(number);
+         
+        }
     }
+
+   
     public class Hero
     {
         public string Name { get; set; }
