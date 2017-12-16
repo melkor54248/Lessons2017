@@ -32,9 +32,6 @@ namespace AwesomeTextRpg
                 else { }
             }
 
-            //add a dragon here
-            Dragoon d;
-
 
 
             Console.ReadLine();
